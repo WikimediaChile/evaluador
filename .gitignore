@@ -1,0 +1,5 @@
+/vendor/*
+*.lock
+*.ini
+/tmp
+!/tmp/README
