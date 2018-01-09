@@ -1,0 +1,27 @@
+<nav class="navbar" role="navigation" aria-label="dropdown navigation">
+    <a class="navbar-item">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Logo_for_e-Science_Photo_Competition_v2_without_text.svg/125px-Logo_for_e-Science_Photo_Competition_v2_without_text.svg.png" width="125" height="29">
+  </a>
+    <div class="navbar-end">
+        <check if="{{@SESSION.is_admin}}">
+            <div class="navbar-item">
+                <a href="{{@BASE}}/admin">Administrar</a>
+            </div>
+        </check>
+        <div class="navbar-item">
+            <a href="{{@BASE}}/salir">Salir</a>
+        </div>
+    </div>
+    </div>
+</nav>
+
+<section class="hero is-primary">
+    <div class="hero-body">
+        <p class="title">
+            Servicio de Evaluación
+        </p>
+        <p class="subtitle">
+            Wikiciencia 2017
+        </p>
+    </div>
+</section>

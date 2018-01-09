@@ -2,3 +2,10 @@
 TEMP=../tmp/
 UI=../gui/
 autoload=../app/
+
+[database]
+server=localhost
+user=root
+password=
+port=3306
+database=evaluacion

@@ -6,8 +6,13 @@ $fat = \Base::instance();
 
 $fat->config('../config.ini');
 
-$fat->route('GET /', function(\Base $fat){
-    echo 'Hello World!';
-});
+if (php_sapi_name() !== 'cli') {
+    \controller\Start::register($fat);
+    \controller\User::register($fat);
+    \controller\Vote::register($fat);
+    \helper\Filters::registry();
+} else {
+    \controller\Cli::register($fat);
+}
 
 $fat->run();

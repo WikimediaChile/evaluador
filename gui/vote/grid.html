@@ -1,0 +1,19 @@
+<include href="vote/menu.html" />
+
+<br />
+<div class="container is-fluid">
+    <section>
+        <repeat group="{{@photos}}" key="{{@i}}" value="{{@photo}}">
+            <check if="{{@i%3 === 0}} ">
+                <check if="{{@i}}">
+                    </div>
+                </check>
+                <div class="columns">
+            </check>
+            <div class="column">
+                <include href="vote/card.html" />
+            </div>
+        </repeat>
+    </div>
+    </section>
+</div>

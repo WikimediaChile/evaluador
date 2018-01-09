@@ -1,0 +1,59 @@
+<div class="card">
+    <div class="card-image">
+        <figure class="image ">
+            <img src='https://commons.wikimedia.org/w/thumb.php?f={{ str_replace(' &amp; ', '%26 ', @photo.photo_name) | raw }}&amp;w=500' />
+        </figure>
+    </div>
+    <div class="card-content">
+        <div class="content">
+            Filename: {{@photo->photo_name}}<br /> Autor: {{@photo->photo_author}}<br />
+            <span class="is-size-7">Tamaño: {{@photo->photo_width}}x{{@photo->photo_height}} ({{@photo->size()}})</span>
+        </div>
+        <form class="vote">
+            <div class="field is-horizontal">
+                <label class="label">Mérito científico</label>
+                <div class="control">
+                    <div class="select">
+                        <select name="cientifico" required>
+                        <option value="">Seleccione</option>
+                      <option value="1">1 - Sin mérito</option>
+                      <option value="2">2</option>
+                      <option value="3">3 - Mérito reconocible</option>
+                      <option value="4">4</option>
+                      <option value="5">5 - Absolutamente meritoria</option>
+                    </select>
+                    </div>
+                </div>
+            </div>
+            <div class="field is-horizontal">
+                <label class="label">Mérito artístico</label>
+                <div class="control">
+                    <div class="select">
+                        <select name="artistico" required>
+                        <option value="">Seleccione</option>
+                      <option value="1">1 - Sin mérito</option>
+                      <option value="2">2</option>
+                      <option value="3">3 - Mérito reconocible</option>
+                      <option value="4">4</option>
+                      <option value="5">5 - Absolutamente meritoria</option>
+                    </select>
+                    </div>
+                </div>
+            </div>
+            <div class="field is-horizontal">
+                <div class="field-label">
+                    <!-- Left empty for spacing -->
+                </div>
+                <div class="control">
+                    <button class="button is-primary" type="submit">
+                      Calificar
+                    </button>
+                </div>
+            </div>
+            <input type="hidden" name="photo" value="{{ @photo->photo_id }}">
+        </form>
+    </div>
+    <footer class="card-footer">
+        <a href="http://commons.wikimedia.org/wiki/File:{{@photo.photo_name | url}}" class="card-footer-item" target="_blank">Ver en Commons</a>
+    </footer>
+</div>

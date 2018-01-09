@@ -1,0 +1,39 @@
+<section class="hero is-success is-fullheight">
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <div class="column is-4 is-offset-4">
+                <h3 class="title has-text-grey">Evaluación <b>Wikiciencia</b></h3>
+                <p class="subtitle has-text-grey">Identífiquese antes de continuar.</p>
+                <div class="box">
+                    <form action="/user/login" method="post">
+                        <div class="field">
+                            <div class="has-text-left">
+                                <label class="label">Usuario</label>
+                            </div>
+                            <div class="control">
+                                <input class="input is-large" type="text" name="user" placeholder="Usuario" autofocus="">
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <div class="has-text-left">
+                                <label class="label">Contraseña</label>
+                            </div>
+                            <div class="control">
+                                <input class="input is-large" type="password" name="password" placeholder="Contraseña">
+                            </div>
+                        </div>
+                        <button type="submit" class="button is-block is-info is-large">Acceder</button>
+                        <input type="hidden" name="token" value="{{@SESSION.csrf}}" />
+                    </form>
+                    <check if="{{@SESSION.flash}}">
+                        <br />
+                        <div class="notification is-warning">
+                            <p>{{@SESSION.flash.message}}</p>
+                        </div>
+                    </check>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
