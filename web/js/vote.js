@@ -13,6 +13,14 @@ $(function () {
         }
     }
 
+    $('#help').on('click', function () {
+        $('.modal').addClass('is-active');
+    });
+
+    $('.close, .modal-background').on('click', function () {
+        $('.modal').removeClass('is-active');
+    })
+
     $('.vote').on('submit', function (event) {
         var params = $(this).serialize(),
             form = $(this);
