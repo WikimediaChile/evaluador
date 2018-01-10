@@ -3,6 +3,8 @@
 <br />
 <div class="container is-fluid">
     <section>
+        <check if="!!count(@photos)">
+            <true>
         <repeat group="{{@photos}}" key="{{@i}}" value="{{@photo}}">
             <check if="{{@i%3 === 0}} ">
                 <check if="{{@i}}">
@@ -15,6 +17,11 @@
             </div>
         </repeat>
     </div>
+        </true>
+        <false>
+            Ya no hay más imágenes por revisar. Muchas gracias por su participación.
+        </false>
+        </check>
     </section>
 </div>
 
