@@ -3,6 +3,7 @@
 namespace controller;
 
 use \model\Photo;
+use \model\User;
 use \helper\Hook;
 
 class Vote extends Main
@@ -15,6 +16,7 @@ class Vote extends Main
         for ($i = 6; $i > 0; $i--) {
             $elements[] = array_pop($Photos);
         }
+        $fat->set('User', User::getByID($fat->get('SESSION.id')));
         $fat->set('photos', $elements);
         $fat->set('page.content', 'vote/grid.html');
         Hook::setHook('body', 'https://code.jquery.com/jquery-2.2.4.min.js', Hook::JS);
