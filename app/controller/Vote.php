@@ -13,7 +13,7 @@ class Vote extends Main
         $Photos = Photo::getNotEvaluated($fat->get('SESSION.id'));
         $elements = [];
         shuffle($Photos);
-        for ($i = 6; $i > 0; $i--) {
+        for ($i = min([6, count($Photos)]); $i > 0; $i--) {
             $elements[] = array_pop($Photos);
         }
         $fat->set('User', User::getByID($fat->get('SESSION.id')));
